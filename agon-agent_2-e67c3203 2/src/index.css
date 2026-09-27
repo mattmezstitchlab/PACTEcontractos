@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Fraunces", Georgia, serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  font-family: var(--font-sans);
+}
+
+body {
+  background: #0e1420;
+  color: #e8edf5;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+/* Scrollbars discrètes */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #2b3349; border-radius: 8px; }
+::-webkit-scrollbar-thumb:hover { background: #3a4560; }
+
+/* Impression du dossier final : fond blanc, texte noir */
+@media print {
+  body { background: #fff !important; color: #111 !important; }
+  .no-print { display: none !important; }
+  .print-block { display: block !important; }
+  .print-text-black { color: #111 !important; }
+  .print-bg-white { background: #fff !important; }
+  main { margin: 0 !important; padding: 0 !important; }
+}
